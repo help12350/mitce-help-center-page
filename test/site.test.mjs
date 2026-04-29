@@ -138,6 +138,10 @@ test('styles use a monochrome product palette and responsive docs layout', async
   assert.match(css, /\.price-card/);
   assert.match(css, /\.price-amount/);
   assert.match(css, /\.guide-hero h1[\s\S]*font-size: clamp\(26px, 6vw, 48px\)/);
+  assert.match(css, /\.guide-card[\s\S]*grid-template-areas:[\s\S]*"icon title"[\s\S]*"icon desc"/);
+  assert.match(css, /\.guide-icon[\s\S]*grid-area: icon/);
+  assert.match(css, /\.guide-card strong[\s\S]*grid-area: title/);
+  assert.match(css, /\.guide-card small[\s\S]*grid-area: desc/);
 });
 
 test('styles include safeguards for recent phone viewport widths', async () => {
