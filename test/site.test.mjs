@@ -119,7 +119,12 @@ test('styles use a monochrome product palette and responsive docs layout', async
   assert.doesNotMatch(css, /#3370ff|#7f3bf5|#14c9c9|#00b578/i);
   assert.match(css, /grid-template-columns: 260px minmax\(0, 1fr\) 220px/);
   assert.match(css, /@media \(max-width: 980px\)/);
+  assert.match(
+    css,
+    /@media \(max-width: 980px\)[\s\S]*\.hero:has\(\.hero-card\)[\s\S]*grid-template-columns: 1fr/
+  );
   assert.match(css, /@media \(max-width: 430px\)/);
+  assert.match(css, /@media \(max-width: 430px\)[\s\S]*\.guide-hero h1[\s\S]*font-size: 26px/);
   assert.match(css, /@media \(max-width: 390px\)/);
   assert.match(css, /body\.is-android/);
   assert.match(css, /body\.is-ios/);
@@ -132,6 +137,7 @@ test('styles use a monochrome product palette and responsive docs layout', async
   assert.match(css, /\.price-grid/);
   assert.match(css, /\.price-card/);
   assert.match(css, /\.price-amount/);
+  assert.match(css, /\.guide-hero h1[\s\S]*font-size: clamp\(26px, 6vw, 48px\)/);
 });
 
 test('styles include safeguards for recent phone viewport widths', async () => {

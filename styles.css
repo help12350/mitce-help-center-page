@@ -296,6 +296,13 @@ h1 {
   letter-spacing: 0;
 }
 
+.guide-hero h1 {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  font-size: clamp(26px, 6vw, 48px);
+  line-height: 1.12;
+}
+
 h2 {
   margin-bottom: 12px;
   font-size: 28px;
@@ -799,6 +806,10 @@ h2 {
     padding: 28px;
   }
 
+  .hero:has(.hero-card) {
+    grid-template-columns: 1fr;
+  }
+
   .link-grid {
     grid-template-columns: 1fr;
   }
@@ -887,6 +898,13 @@ h2 {
 
   h1 {
     font-size: 36px;
+  }
+
+  .guide-hero h1 {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    font-size: 26px;
+    line-height: 1.16;
   }
 
   .hero-card strong {
