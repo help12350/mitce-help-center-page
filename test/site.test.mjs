@@ -46,8 +46,11 @@ test('home page exposes the expected help center structure', async () => {
   assert.match(html, /class="footer-links"/);
   assert.match(html, /class="footer-contact"/);
   assert.match(html, /<small>Xingqiao Yunqi Network Inc\.<\/small>/);
+  assert.match(html, /Help Center/);
   assert.match(html, /© 2026 星桥云启科技/);
   assert.match(html, /QQ：3818898938/);
+  assert.match(html, /QQ群：1083428128/);
+  assert.doesNotMatch(html, /MITCE Docs/);
   assert.doesNotMatch(html, /MITCE Network Inc\./);
   assert.doesNotMatch(html, /aria-label="文档状态"/);
   assert.doesNotMatch(html, /在线文档/);
