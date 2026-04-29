@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>./index.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/windows.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/macos.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/android.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/ios-ipados.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/quick-reference.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/privacy.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/terms.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./pages/support.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/windows-clash-verge.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/windows-v2rayn.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/android-clash-meta.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/android-v2rayng.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/android-sing-box.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/macos-clash-verge.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/macos-singbox.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/macos-shadowrocket.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/ios-singbox.html</loc><lastmod>2026-04-28</lastmod></url>
+  <url><loc>./guides/ios-shadowrocket.html</loc><lastmod>2026-04-28</lastmod></url>
+</urlset>

@@ -1,0 +1,16 @@
+{
+  "name": "MITCE 帮助中心",
+  "short_name": "帮助中心",
+  "description": "Windows、macOS、Android、iOS&iPadOS 使用教程与下载入口。",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
