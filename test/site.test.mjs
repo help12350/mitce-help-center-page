@@ -60,29 +60,41 @@ test('home page exposes the expected help center structure', async () => {
   assert.match(html, /aria-expanded="false"/);
 });
 
-test('home page presents Japan annual pricing plans', async () => {
+test('home page presents standard and Japan annual pricing plans', async () => {
   const html = await readFile(new URL('index.html', root), 'utf8');
 
   assert.match(html, /id="pricing"/);
   assert.match(html, /套餐报价/);
   assert.match(html, /class="price-grid"/);
-  assert.match(html, /class="price-card"/);
+  assert.match(html, /class="price-card[^"]*"/);
+  assert.match(html, /普通轻量套餐/);
+  assert.match(html, /100G\/月/);
+  assert.match(html, /年费 160/);
+  assert.match(html, /每月 100GB 流量，流量每月重置/);
+  assert.match(html, /普通进阶套餐/);
+  assert.match(html, /500G\/月/);
+  assert.match(html, /年费 200/);
+  assert.match(html, /每月 500GB 流量，流量每月重置/);
+  assert.match(html, /普通无限套餐/);
+  assert.match(html, /不限流量/);
+  assert.match(html, /年费 480/);
+  assert.match(html, /动态网速 1000Mbps/);
+  assert.match(html, /可连接 10 台设备/);
   assert.match(html, /Japan-Basic/);
-  assert.match(html, /69 个库存/);
   assert.match(html, /¥240\/年/);
   assert.match(html, /约 ¥20\/月/);
   assert.match(html, /每月 60GB 流量/);
   assert.match(html, /Japan-Pro/);
-  assert.match(html, /42 个库存/);
   assert.match(html, /¥500\/年/);
   assert.match(html, /约 ¥41\.67\/月/);
   assert.match(html, /每月 200GB 流量/);
   assert.match(html, /动态网速 100Mbps/);
   assert.match(html, /5 台设备/);
-  assert.match(html, /Hysteria2 & Reality/);
   assert.match(html, /美国、英国 ISP 节点/);
   assert.match(html, /比 Basic 多 140GB\/月/);
   assert.match(html, /href="#pricing"/);
+  assert.doesNotMatch(html, /库存/);
+  assert.doesNotMatch(html, /ChatGPT|chatgpt|Hysteria2|Reality/);
 });
 
 test('publish support files exist for GitHub Pages', async () => {
@@ -238,14 +250,11 @@ test('static site keeps user-facing subscription guidance simple', async () => {
   }
 });
 
-test('static site only mentions ChatGPT in plan support copy', async () => {
+test('static site does not contain ChatGPT-specific content', async () => {
   for (const file of await htmlFiles()) {
     const html = await readFile(file, 'utf8');
     assert.doesNotMatch(html, /openai\.chatgpt/i);
-
-    if (!file.pathname.endsWith('/index.html')) {
-      assert.doesNotMatch(html, /ChatGPT|chatgpt/i);
-    }
+    assert.doesNotMatch(html, /ChatGPT|chatgpt/i);
   }
 });
 

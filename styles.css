@@ -375,12 +375,12 @@ h2 {
 .price-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 16px;
 }
 
 .price-card {
   display: grid;
-  min-height: 430px;
+  min-height: 360px;
   align-content: start;
   gap: 14px;
   padding: 24px;
@@ -398,25 +398,6 @@ h2 {
   box-shadow: 8px 8px 0 var(--mono-300);
 }
 
-.price-card.featured {
-  color: var(--paper);
-  background: var(--ink);
-  box-shadow: 8px 8px 0 var(--mono-300);
-}
-
-.price-card.featured:hover,
-.price-card.featured:focus-visible {
-  box-shadow: 10px 10px 0 var(--mono-300);
-}
-
-.price-topline {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .price-label {
   width: fit-content;
   padding: 3px 9px;
@@ -425,23 +406,6 @@ h2 {
   font-size: 12px;
   font-weight: 900;
   line-height: 1.4;
-}
-
-.stock-badge {
-  width: fit-content;
-  padding: 3px 9px;
-  border: 1px solid var(--border);
-  color: var(--mono-600);
-  background: var(--mono-050);
-  font-size: 12px;
-  font-weight: 900;
-  line-height: 1.4;
-}
-
-.price-card.featured .stock-badge {
-  border-color: var(--mono-600);
-  color: var(--mono-200);
-  background: var(--mono-900);
 }
 
 .price-card strong {
@@ -476,17 +440,6 @@ h2 {
   color: var(--ink);
 }
 
-.price-card.featured .plan-difference {
-  border-color: var(--mono-600);
-  color: var(--paper);
-  background: var(--mono-900);
-}
-
-.price-card.featured:hover .plan-difference,
-.price-card.featured:focus-visible .plan-difference {
-  color: var(--paper);
-}
-
 .price-detail-list {
   display: grid;
   gap: 8px;
@@ -516,11 +469,6 @@ h2 {
 .price-card small,
 .price-card .price-detail-list {
   color: var(--mono-600);
-}
-
-.price-card.featured small,
-.price-card.featured .price-detail-list {
-  color: var(--mono-200);
 }
 
 .guide-card {
