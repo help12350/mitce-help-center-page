@@ -60,17 +60,28 @@ test('home page exposes the expected help center structure', async () => {
   assert.match(html, /aria-expanded="false"/);
 });
 
-test('home page presents annual pricing plans', async () => {
+test('home page presents Japan annual pricing plans', async () => {
   const html = await readFile(new URL('index.html', root), 'utf8');
 
   assert.match(html, /id="pricing"/);
   assert.match(html, /套餐报价/);
   assert.match(html, /class="price-grid"/);
   assert.match(html, /class="price-card"/);
-  assert.match(html, /100G\/月/);
-  assert.match(html, /年费 160/);
-  assert.match(html, /500G\/月/);
-  assert.match(html, /年费 200/);
+  assert.match(html, /Japan-Basic/);
+  assert.match(html, /69 个库存/);
+  assert.match(html, /¥240\/年/);
+  assert.match(html, /约 ¥20\/月/);
+  assert.match(html, /每月 60GB 流量/);
+  assert.match(html, /Japan-Pro/);
+  assert.match(html, /42 个库存/);
+  assert.match(html, /¥500\/年/);
+  assert.match(html, /约 ¥41\.67\/月/);
+  assert.match(html, /每月 200GB 流量/);
+  assert.match(html, /动态网速 100Mbps/);
+  assert.match(html, /5 台设备/);
+  assert.match(html, /Hysteria2 & Reality/);
+  assert.match(html, /美国、英国 ISP 节点/);
+  assert.match(html, /比 Basic 多 140GB\/月/);
   assert.match(html, /href="#pricing"/);
 });
 
@@ -139,7 +150,10 @@ test('styles use a monochrome product palette and responsive docs layout', async
   assert.match(css, /\.recommend-badge/);
   assert.match(css, /\.price-grid/);
   assert.match(css, /\.price-card/);
+  assert.match(css, /\.price-card:hover/);
   assert.match(css, /\.price-amount/);
+  assert.match(css, /\.price-detail-list/);
+  assert.match(css, /\.plan-difference/);
   assert.match(css, /\.guide-hero h1[\s\S]*font-size: clamp\(26px, 6vw, 48px\)/);
   assert.match(css, /\.guide-card[\s\S]*grid-template-areas:[\s\S]*"icon title"[\s\S]*"icon desc"/);
   assert.match(css, /\.guide-icon[\s\S]*grid-area: icon/);
@@ -224,10 +238,14 @@ test('static site keeps user-facing subscription guidance simple', async () => {
   }
 });
 
-test('static site no longer contains ChatGPT-specific content', async () => {
+test('static site only mentions ChatGPT in plan support copy', async () => {
   for (const file of await htmlFiles()) {
     const html = await readFile(file, 'utf8');
-    assert.doesNotMatch(html, /ChatGPT|chatgpt|openai\.chatgpt/i);
+    assert.doesNotMatch(html, /openai\.chatgpt/i);
+
+    if (!file.pathname.endsWith('/index.html')) {
+      assert.doesNotMatch(html, /ChatGPT|chatgpt/i);
+    }
   }
 });
 
