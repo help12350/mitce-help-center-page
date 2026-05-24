@@ -69,11 +69,11 @@ test('home page presents standard and Japan annual pricing plans', async () => {
   assert.match(html, /class="price-card[^"]*"/);
   assert.match(html, /普通轻量套餐/);
   assert.match(html, /100G\/月/);
-  assert.match(html, /年费 160/);
+  assert.match(html, /年费 180/);
   assert.match(html, /每月 100GB 流量，流量每月重置/);
   assert.match(html, /普通进阶套餐/);
   assert.match(html, /500G\/月/);
-  assert.match(html, /年费 200/);
+  assert.match(html, /年费 220/);
   assert.match(html, /每月 500GB 流量，流量每月重置/);
   assert.match(html, /普通无限套餐/);
   assert.match(html, /不限流量/);
